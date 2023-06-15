@@ -1,14 +1,14 @@
 // Write your Character component here
 import React from 'react'
+import Name from './Name'
 
-const SwNames = (props) => {
+
+
+export default function SwNames(props){
+    const {star} = props;
     return (
-        <div className = 'sw-name-wrapper'>
-            <h3>{props.star.name}</h3>
-            <p>{props.star.birth_year}</p>
-            <p>{props.star.gender}</p>
-        </div>
+        star.map(sw => {
+            return <Name star={sw} />
+        })
     )
 }
-export default SwNames;
-
